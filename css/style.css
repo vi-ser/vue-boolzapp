@@ -93,6 +93,17 @@ body {
     padding: 8px 16px;
 }
 
+#left #contact-list .contact:not(:last-child) {
+    border-bottom: 1px solid #f0f1f3;
+}
+
+
+
+#left #contact-list .contact:hover {
+    background-color: #f7f7f7;
+}
+
+
 #left #contact-list .contact.active {
     background-color: #E9EBEB;
 }

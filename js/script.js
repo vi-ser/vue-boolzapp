@@ -72,7 +72,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Alessandro B.',
+                    name: 'Pastoryus 🎵',
                     avatar: './img/avatar_4.png',
                     visible: true,
                     messages: [
@@ -83,7 +83,7 @@ createApp({
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Si, ma preferirei andare al cinema',
+                            message: 'Domani la proviamo, Viselloooo',
                             status: 'received'
                         }
                     ],
@@ -100,29 +100,29 @@ createApp({
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Va bene, stasera la sento',
+                            message: 'Va bene, stasera la odo',
                             status: 'received'
                         }
                     ],
                 },
                 {
-                    name: 'Claudia',
+                    name: 'Alessia',
                     avatar: './img/avatar_6.png',
                     visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Ciao Claudia, hai novità?',
+                            message: 'Ciao zia, novità?',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Non ancora',
+                            message: 'Ancora nulla zio',
                             status: 'received'
                         },
                         {
                             date: '10/01/2020 15:51:00',
-                            message: 'Nessuna nuova, buona nuova',
+                            message: 'Ok ok, ci sentiamo più tardi',
                             status: 'sent'
                         }
                     ],
@@ -145,23 +145,23 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Davide',
+                    name: 'Fulvio',
                     avatar: './img/avatar_8.png',
                     visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                            message: 'Fr, andiamo a mangiare la pizza stasera?',
                             status: 'received'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                            message: 'No, l\'ho già mangiata ieri fr, ordiniamo sushi!',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:51:00',
-                            message: 'OK!!',
+                            message: 'Uhhhhhh va benissimo',
                             status: 'received'
                         }
                     ],
