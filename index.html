@@ -65,8 +65,9 @@
                 </div>
 
                 <div id="contact-list">
-                    <div v-for="(currentContact, contactIndex) in contacts"
-                        class="contact d-flex justify-content-between ">
+                    <div v-for="(currentContact, contactIndex) in contacts" @click="changeContact(contactIndex)"
+                        class="contact d-flex justify-content-between"
+                        :class=" contactIndex == activeIndex ? 'active' : '' ">
                         <div class="left d-flex gap-3">
                             <img :src="currentContact.avatar">
                             <div class="info d-flex flex-column pt-1">
@@ -110,21 +111,6 @@
                         <p>{{ currentMessage.message }}</p>
                         <span>{{ getHours(currentMessage.date) }}</span>
                     </div>
-
-                    <!-- <div class="message sent">
-                        <p>Hai portato a spasso il cane?</p>
-                        <span>15:30</span>
-                    </div>
-
-                    <div class="message sent">
-                        <p>Ricordati di stendere i panni</p>
-                        <span>15:50</span>
-                    </div>
-
-                    <div class="message received">
-                        <p>Tutto fatto!</p>
-                        <span>16:15</span>
-                    </div> -->
 
                 </div>
 

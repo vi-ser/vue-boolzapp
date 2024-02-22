@@ -189,7 +189,15 @@ createApp({
 
             return formattedTime;
 
-        }
+        },
+
+        changeContact(newIndex) {
+            this.activeIndex = newIndex;
+        },
+
     },
+
+
+
 
 }).mount("#app");
