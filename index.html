@@ -36,15 +36,32 @@
     <div id="app" class="d-flex p-5">
 
         <div id="container" class="container d-flex">
+
             <!-- colonna sinistra -->
             <div id="left" class="d-flex flex-column">
-                <div id="user">
+                <div id="user" class="d-flex justify-content-between">
+                    <div id="profile" class="d-flex gap-2 align-items-center">
+                        <img src="./img/avatar_2.jpg" alt="">
+                        <span>Vincenzo</span>
+                    </div>
+                    <div id="user-menu" class="d-flex gap-3 align-items-center">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
                 </div>
-                <div id="notifications">
-
+                <div id="notifications" class="d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-bell-slash"></i>
+                    <div id="notifications-text" class="d-flex flex-column">
+                        <span class="text-black">Ricevi notifiche di nuovi messaggi</span>
+                        <span class="text-decoration-underline text-black-50">Attiva notifiche desktop</span>
+                    </div>
                 </div>
                 <div id="searchbar-container" class="d-flex">
-                    <input id="searchbar" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass bg-white border border-1 border-opacity-50"></i>
+                    <input type="search" id="searchbar" class="rounded-0 border border-1 border-opacity-50 "
+                        placeholder="Cerca o inizia una nuova chat">
+                    <!-- <input id="searchbar" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search"> -->
                 </div>
                 <div id="contact-list">
 
@@ -52,7 +69,7 @@
             </div>
 
 
-            <!-- main -->
+            <!-- colonna destra -->
             <div id="right" class="d-flex flex-column">
                 <div id="contact-info">
 
