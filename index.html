@@ -102,11 +102,30 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div id="current-chat">
+                <div id="current-chat" class="d-flex flex-column gap-3">
+
+                    <div class="message sent">
+                        <p>Hai portato a spasso il cane?</p>
+                        <span>15:30</span>
+                    </div>
+
+                    <div class="message sent">
+                        <p>Ricordati di stendere i panni</p>
+                        <span>15:50</span>
+                    </div>
+
+                    <div class="message received">
+                        <p>Tutto fatto!</p>
+                        <span>16:15</span>
+                    </div>
 
                 </div>
 
-                <div id="input-control">
+                <div id="input-control" class="d-flex justify-content-evenly align-items-center ">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" id="input-message" class="border border-0 rounded-2"
+                        placeholder="Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
 
