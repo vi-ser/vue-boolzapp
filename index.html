@@ -41,7 +41,7 @@
             <div id="left" class="d-flex flex-column">
                 <div id="user" class="d-flex justify-content-between">
                     <div id="profile" class="d-flex gap-2 align-items-center">
-                        <img src="./img/avatar_2.jpg" alt="">
+                        <img src="./img/avatar_io.png" alt="">
                         <span>Vincenzo</span>
                     </div>
                     <div id="user-menu" class="d-flex gap-3 align-items-center">
@@ -65,15 +65,21 @@
                 </div>
 
                 <div id="contact-list">
-                    <div class="contact active d-flex justify-content-between ">
+                    <div v-for="(currentContact, index) in contacts" class="contact d-flex justify-content-between ">
                         <div class="left d-flex gap-3">
-                            <img src="./img/avatar_1.jpg">
+                            <img :src="currentContact.avatar">
                             <div class="info d-flex flex-column pt-1">
-                                <span>Michele</span>
-                                <p>Ultimo messaggio inviato</p>
+                                <span>{{ currentContact.name }}</span>
+                                <p>
+                                    {{currentContact.messages[currentContact.messages.length - 1].message}}
+                                </p>
                             </div>
                         </div>
-                        <span class="date pt-1">12:00</span>
+                        <!-- <span class="date pt-1">{{ currentContact.messages[currentContact.messages.length - 1].date
+                            }}</span> -->
+                        <span class="date pt-1">
+                            12:00
+                        </span>
                     </div>
 
 
