@@ -173,4 +173,23 @@ createApp({
         }
     },
 
+    methods: {
+
+        // ottengo solo le ore dalla stringa "date"
+        getHours(dateString) {
+
+            // splitto usando lo spazio
+            const [date, time] = dateString.split(' ');
+
+            // splitto usando i :
+            const [hours, minutes, seconds] = time.split(':');
+
+            // unisco ore e minuti con :
+            const formattedTime = `${hours}:${minutes}`;
+
+            return formattedTime;
+
+        }
+    },
+
 }).mount("#app");
