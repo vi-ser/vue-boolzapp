@@ -1,0 +1,76 @@
+body {
+    position: relative;
+}
+
+#background {
+    position: absolute;
+    z-index: -1;
+}
+
+#background #solid {
+    background-color: #009688;
+    height: 125px;
+    width: 100vw;
+}
+
+#background #gradient {
+    background: linear-gradient(180deg, rgba(221, 219, 209, 1) 0%, rgba(210, 219, 219, 1) 100%);
+    height: calc(100vh - 125px);
+    width: 100vw;
+}
+
+#container {
+    height: 790px;
+}
+
+#left {
+    width: 460px;
+}
+
+#left #user {
+    height: 60px;
+    background-color: #EAEAEA;
+}
+
+#left #notifications {
+    height: 72px;
+    background-color: #8EDAFC;
+}
+
+#left #searchbar-container {
+    background-color: #FAFAFA;
+    height: 42px;
+}
+
+#left #searchbar-container #searchbar {
+    width: 100%;
+}
+
+#left #contact-list {
+    background-color: white;
+    flex-grow: 1;
+}
+
+#right {
+    width: 1040px;
+    position: relative;
+}
+
+#right #contact-info {
+    height: 60px;
+    background-color: #EAEAEA;
+}
+
+#right #current-chat {
+    flex-grow: 1;
+    background-image: url('../img/mine.jpg');
+}
+
+#right #input-control {
+    position: absolute;
+    bottom: 0;
+
+    background-color: #F3EEEA;
+    height: 60px;
+    width: 100%;
+}
