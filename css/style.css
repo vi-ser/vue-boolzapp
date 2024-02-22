@@ -78,17 +78,43 @@ body {
     border-right: none !important;
 }
 
-
-
 #left #searchbar-container #searchbar {
     width: 100%;
     font-size: 11px;
 }
 
-
 #left #contact-list {
     background-color: white;
     flex-grow: 1;
+    overflow-y: auto;
+}
+
+#left #contact-list .contact {
+    padding: 8px 16px;
+}
+
+#left #contact-list .contact.active {
+    background-color: #E9EBEB;
+}
+
+#left #contact-list .contact img {
+    height: 52px;
+    border-radius: 50px;
+    aspect-ratio: 1;
+}
+
+#left #contact-list .contact .info {
+    font-size: 14px;
+}
+
+#left #contact-list .contact p {
+    font-size: 11px;
+    color: #B0B4B6;
+}
+
+#left #contact-list .contact .date {
+    color: #B0B4B6;
+    font-size: 11px;
 }
 
 #right {
