@@ -97,12 +97,9 @@ body {
     border-bottom: 1px solid #f0f1f3;
 }
 
-
-
 #left #contact-list .contact:hover {
     background-color: #f7f7f7;
 }
-
 
 #left #contact-list .contact.active {
     background-color: #E9EBEB;
@@ -133,9 +130,31 @@ body {
     position: relative;
 }
 
-#right #contact-info {
+#right #active-contact {
     height: 60px;
     background-color: #EAEAEA;
+    padding: 8px;
+}
+
+
+#right #active-contact img {
+    height: 42px;
+    aspect-ratio: 1;
+    border-radius: 50px;
+}
+
+#right #active-contact .information {
+    font-size: 13px;
+    color: black;
+}
+
+#right #active-contact p {
+    font-size: 11px;
+    color: #9BA0A3;
+}
+
+#right #active-contact i {
+    color: #B1B1B1;
 }
 
 #right #current-chat {
