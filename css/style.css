@@ -42,16 +42,22 @@ body {
 
 #left #user span {
     font-size: 13px;
+    user-select: none;
 }
 
 #left #user-menu {
     color: #B1B1B1;
 }
 
+#left #user-menu i {
+    cursor: pointer;
+}
+
 #left #notifications {
     height: 72px;
     background-color: #8EDAFC;
     padding: 12px 16px;
+    user-select: none;
 }
 
 #left #notifications i {
@@ -91,6 +97,7 @@ body {
 
 #left #contact-list .contact {
     padding: 8px 16px;
+    user-select: none;
 }
 
 #left #contact-list .contact:not(:last-child) {
@@ -145,6 +152,7 @@ body {
 #right #active-contact .information {
     font-size: 13px;
     color: black;
+    user-select: none;
 }
 
 #right #active-contact p {
@@ -154,6 +162,7 @@ body {
 
 #right #active-contact i {
     color: #B1B1B1;
+    cursor: pointer;
 }
 
 #right #current-chat {
