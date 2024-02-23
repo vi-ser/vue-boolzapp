@@ -243,16 +243,20 @@ createApp({
                 // pulisco il campo del messaggio dopo l'invio
                 this.newMessageText = '';
 
+                // salvo l'indice attivo in una variabile
+                let answerIndex = this.activeIndex;
 
                 // quando invio un messaggio ricevo un messaggio dopo un secondo
                 setTimeout(() => {
+
+
                     const receivedMessage = {
                         message: answers[randomIndex],
                         date: formattedTime,
                         status: 'received'
                     };
 
-                    this.contacts[this.activeIndex].messages.push(receivedMessage);
+                    this.contacts[answerIndex].messages.push(receivedMessage);
                     ;
                 }, 1000);
 
