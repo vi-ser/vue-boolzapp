@@ -212,6 +212,13 @@ createApp({
                 // calcolo la data di invio del messaggio nel formato giusto
                 // es. '10/01/2020 15:30:55'
 
+                const answers = [
+                    'Ok zio', 'Ti faccio sapere', 'A più tardi allora', 'Non saprei, zio', 'Grazie a te', '...come disse Jim Morrison'
+                ]
+
+                let randomIndex = Math.floor(Math.random() * answers.length);
+                console.log(randomIndex);
+
                 const now = new Date();
                 const year = now.getFullYear();
                 const month = String(now.getMonth()).padStart(2, '0');
@@ -240,7 +247,7 @@ createApp({
                 // quando invio un messaggio ricevo un messaggio dopo un secondo
                 setTimeout(() => {
                     const receivedMessage = {
-                        message: 'Grazie a te!',
+                        message: answers[randomIndex],
                         date: formattedTime,
                         status: 'received'
                     };
