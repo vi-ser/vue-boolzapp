@@ -233,14 +233,17 @@ createApp({
             this.newMessageText = '';
 
 
-            // la friendzone
-            const receivedMessage = {
-                message: 'ok',
-                date: formattedTime,
-                status: 'received'
-            };
+            setTimeout(() => {
+                const receivedMessage = {
+                    message: 'ok',
+                    date: formattedTime,
+                    status: 'received'
+                };
 
-            this.contacts[this.activeIndex].messages.push(receivedMessage);
+                this.contacts[this.activeIndex].messages.push(receivedMessage);
+                ;
+            }, 1000);
+            // ricevo un messaggio con 'ok' quando ne invio uno
 
         },
 
