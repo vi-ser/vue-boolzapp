@@ -99,10 +99,13 @@
                         <div class="information d-flex flex-column justify-content-center">
                             <span>{{contacts[activeIndex].name}}</span>
 
-                            <p class="m-0">Ultimo accesso oggi alle {{
+                            <p class="m-0">{{ contacts[activeIndex].lastAccess }}</p>
+
+                            <!-- <p class="m-0"> Ultimo accesso oggi alle {{
                                 formatHours(contacts[activeIndex].messages[contacts[activeIndex].messages.length -
                                 1].date)
-                                }}</p>
+                                }}
+                            </p> -->
 
                         </div>
                     </div>

@@ -5,6 +5,9 @@ createApp({
         return {
 
             activeIndex: 0,
+            lastMessage: '',
+            lastAccess: '',
+
 
             contacts: [
                 {
@@ -204,21 +207,48 @@ createApp({
             this.activeIndex = newIndex;
         },
 
+        defaultLastAccess() {
+            this.contacts.forEach(contact => {
+                if (contact.messages.length > 0) {
+                    lastMessage = contact.messages[contact.messages.length - 1];
+                    lastAccess = `Ultimo accesso oggi alle ${this.formatHours(lastMessage.date)}`;
+                    contact.lastAccess = lastAccess;
+                }
+            });
+        },
+
         // invio e ricezione messaggi
         sendMessage() {
 
             if (this.newMessageText.trim() != '') {
 
-                // calcolo la data di invio del messaggio nel formato giusto
-                // es. '10/01/2020 15:30:55'
-
                 const answers = [
-                    'Ok zio', 'Ti faccio sapere', 'A più tardi allora', 'Non saprei, zio', 'Grazie a te', '...come disse Jim Morrison'
+                    'Va bene zio.',
+                    'Capito zio.',
+                    'Grazie per l\'informazione zio.',
+                    'Ok, ci sentiamo dopo zio.',
+                    'Mi dispiace, non capisco zio.',
+                    'Interessante zio!',
+                    'Oh, davvero zio?',
+                    'Perfetto zio!',
+                    'Certo, nessun problema zio.',
+                    'Grazie mille zio!',
+                    'Non c\'è di che zio.',
+                    'Beh, non lo so zio.',
+                    'Mi sembra una buona idea zio.',
+                    'Sembra interessante zio.',
+                    'Posso chiederti di più su questo zio?',
+                    'Non ho idea di cosa stai parlando zio.',
+                    'Mi piacerebbe saperne di più zio.',
+                    'In effetti zio.',
+                    'Esatto zio!',
+                    'Non sono sicuro, dovrò controllare zio.'
                 ]
 
                 let randomIndex = Math.floor(Math.random() * answers.length);
-                console.log(randomIndex);
 
+                // calcolo la data di invio del messaggio nel formato giusto
+                // es. '10/01/2020 15:30:55'
                 const now = new Date();
                 const year = now.getFullYear();
                 const month = String(now.getMonth()).padStart(2, '0');
@@ -246,10 +276,32 @@ createApp({
                 // salvo l'indice attivo in una variabile
                 let answerIndex = this.activeIndex;
 
-                // quando invio un messaggio ricevo un messaggio dopo un secondo
+                // salvo l'indice in una variabile
+                const activeContact = this.contacts[this.activeIndex];
+
                 setTimeout(() => {
+                    // mostro il contatto online (tempo di lettura del messaggio) 
+                    activeContact.lastAccess = 'online';
+                }, 2000);
+
+                // mentre il contatto scrive mostro "sta scrivendo..."
+                setTimeout(() => {
+                    activeContact.lastAccess = 'Sta scrivendo...';
+                }, 4000);
+
+                // mostro nuovamente l'utente online per 2 secondi 
+                setTimeout(() => {
+                    activeContact.lastAccess = 'online';
+                }, 6000);
+
+                // reimposto l'ultimo accesso
+                setTimeout(() => {
+                    activeContact.lastAccess = `Ultimo accesso oggi alle ${this.formatHours(formattedTime)}`;
+                }, 8000);
 
 
+                // genero un messaggio random e lo pusho nell'array
+                setTimeout(() => {
                     const receivedMessage = {
                         message: answers[randomIndex],
                         date: formattedTime,
@@ -258,7 +310,7 @@ createApp({
 
                     this.contacts[answerIndex].messages.push(receivedMessage);
                     ;
-                }, 1000);
+                }, 6000);
 
             }
 
@@ -291,5 +343,9 @@ createApp({
 
         }
 
+    },
+    mounted() {
+        // chiamo il metodo nel mounted per caricare di default l'ultimo accesso del contatto
+        this.defaultLastAccess();
     }
 }).mount("#app");
