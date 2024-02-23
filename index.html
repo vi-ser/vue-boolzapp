@@ -104,6 +104,7 @@
                                 formatHours(contacts[activeIndex].messages[contacts[activeIndex].messages.length -
                                 1].date)
                                 }}</p>
+
                         </div>
                     </div>
                     <div class="right d-flex gap-3 p-2">
@@ -118,6 +119,7 @@
                         :class="{ 'sent': currentMessage.status === 'sent', 'received': currentMessage.status === 'received' }">
                         <p>{{ currentMessage.message }}</p>
                         <span>{{ formatHours(currentMessage.date) }}</span>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
 
                 </div>

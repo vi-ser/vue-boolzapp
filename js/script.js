@@ -251,17 +251,21 @@ createApp({
 
         searchContact() {
 
+            // converto in minuscolo l'input della ricerca
             this.searchedName = this.searchedName.toLowerCase();
 
+            // filtro i contatti
             const filteredContacts = this.contacts.filter(contact => {
 
+                // converto in minuscolo i nomi dei contatti nell array
                 const contactName = contact.name.toLowerCase();
 
+                // restituisco solo i nomi che includono i caratteri ricercati
                 return contactName.includes(this.searchedName);
 
             });
 
-            // Ritorna l'array filtrato
+            // restituisco l'array filtrato
             return filteredContacts;
 
         },

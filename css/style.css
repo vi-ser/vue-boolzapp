@@ -180,7 +180,6 @@ body {
     background-image: url('../img/mine.jpg');
     padding: 48px 84px;
     overflow-y: auto;
-
 }
 
 #right #current-chat .message {
@@ -202,6 +201,24 @@ body {
     position: absolute;
     bottom: 4px;
     right: 6px;
+}
+
+#right #current-chat .message i {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    opacity: 0;
+    padding: 8px;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+
+#right #current-chat .message:hover i {
+    display: inline-block;
+    right: 8px;
+    opacity: 1;
+    transition: .3s ease;
 }
 
 .message.sent {
