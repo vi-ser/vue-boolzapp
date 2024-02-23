@@ -206,23 +206,30 @@ createApp({
         sendMessage() {
 
             // calcolo la data di invio del messaggio nel formato giusto
+            // es. '10/01/2020 15:30:55'
+
             const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth()).padStart(2, '0');
+            const day = String(now.getDay()).padStart(2, '0');
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
-            const messageTime = `${hours}:${minutes}`;
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const messageTime = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+            const formattedTime = String(messageTime);
 
             // creo un nuovo oggetto messaggio con il testo e la data
             const newMessage = {
                 message: this.newMessageText,
-                date: messageTime,
+                date: formattedTime,
                 status: 'sent'
             };
 
             // aggiungo il nuovo oggetto all'array di messaggi
-            // this.contacts[this.activeIndex].messages.push(newMessage);
+            this.contacts[this.activeIndex].messages.push(newMessage);
 
             // pulisco il campo del messaggio dopo l'invio
-            console.log(newMessage)
             this.newMessageText = '';
         }
 
