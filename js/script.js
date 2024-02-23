@@ -171,6 +171,7 @@ createApp({
             ],
 
             newMessageText: '',
+            searchedName: '',
 
         }
     },
@@ -203,6 +204,7 @@ createApp({
             this.activeIndex = newIndex;
         },
 
+        // invio e ricezione messaggi
         sendMessage() {
 
             // calcolo la data di invio del messaggio nel formato giusto
@@ -233,6 +235,7 @@ createApp({
             this.newMessageText = '';
 
 
+            // quando invio un messaggio ricevo un messaggio con scritto 'ok' dopo un secondo
             setTimeout(() => {
                 const receivedMessage = {
                     message: 'ok',
@@ -243,11 +246,26 @@ createApp({
                 this.contacts[this.activeIndex].messages.push(receivedMessage);
                 ;
             }, 1000);
-            // ricevo un messaggio con 'ok' quando ne invio uno
+
+        },
+
+        searchContact() {
+
+            this.searchedName = this.searchedName.toLowerCase();
+
+            const filteredContacts = this.contacts.filter(contact => {
+
+                const contactName = contact.name.toLowerCase();
+
+                return contactName.includes(this.searchedName);
+
+            });
+
+            // Ritorna l'array filtrato
+            return filteredContacts;
 
         },
 
     }
-
 
 }).mount("#app");
