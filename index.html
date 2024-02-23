@@ -115,11 +115,15 @@
                 </div>
                 <div id="current-chat" class="d-flex flex-column gap-3">
 
-                    <div v-for="(currentMessage, messageIndex) in contacts[activeIndex].messages" class="message"
+                    <div v-for="(currentMessage, messageIndex) in contacts[activeIndex].messages"
+                        class="message dropdown"
                         :class="{ 'sent': currentMessage.status === 'sent', 'received': currentMessage.status === 'received' }">
                         <p>{{ currentMessage.message }}</p>
                         <span>{{ formatHours(currentMessage.date) }}</span>
-                        <i class="fa-solid fa-chevron-down"></i>
+                        <i class="dropdown-toggle fa-solid fa-chevron-down" data-bs-toggle="dropdown"></i>
+                        <ul class="dropdown-menu border border-0 shadow">
+                            <li><a class="dropdown-item" href="#">Elimina messaggio</a></li>
+                        </ul>
                     </div>
 
                 </div>

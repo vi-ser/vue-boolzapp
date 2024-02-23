@@ -221,6 +221,28 @@ body {
     transition: .3s ease;
 }
 
+#right #current-chat .message:not(:hover) i {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    opacity: 0;
+    padding: 8px;
+    background-color: inherit;
+    border-radius: 50%;
+    transition: .3s ease;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.message ul {
+    font-size: 13px;
+    color: #676E71;
+}
+
+
+
 .message.sent {
     background-color: #D5F9BA;
     align-self: flex-end;
