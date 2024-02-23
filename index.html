@@ -78,10 +78,11 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- <span class="date pt-1">{{ currentContact.messages[currentContact.messages.length - 1].date
-                            }}</span> -->
+
                         <span class="date pt-1">
-                            12:00
+                            {{
+                            formatHours(currentContact.messages[currentContact.messages.length - 1].date)
+                            }}
                         </span>
                     </div>
 
@@ -97,9 +98,9 @@
                         <div class="information d-flex flex-column justify-content-center">
                             <span>{{contacts[activeIndex].name}}</span>
 
-                            <!-- qui ho chiesto aiuto a ChatGpt perché stavo impazzendo con gli indici -->
                             <p class="m-0">Ultimo accesso oggi alle {{
-                                getHours(contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date)
+                                formatHours(contacts[activeIndex].messages[contacts[activeIndex].messages.length -
+                                1].date)
                                 }}</p>
                         </div>
                     </div>
@@ -114,15 +115,15 @@
                     <div v-for="(currentMessage, messageIndex) in contacts[activeIndex].messages" class="message"
                         :class="{ 'sent': currentMessage.status === 'sent', 'received': currentMessage.status === 'received' }">
                         <p>{{ currentMessage.message }}</p>
-                        <span>{{ getHours(currentMessage.date) }}</span>
+                        <span>{{ formatHours(currentMessage.date) }}</span>
                     </div>
 
                 </div>
 
                 <div id="input-control" class="d-flex justify-content-evenly align-items-center ">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" id="input-message" class="border border-0 rounded-2"
-                        placeholder="Scrivi un messaggio">
+                    <input v-model="newMessageText" @keyup.enter="sendMessage()" type="text" id="input-message"
+                        class="border border-0 rounded-2" placeholder="Scrivi un messaggio">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>

@@ -2,6 +2,8 @@ body {
     position: relative;
 }
 
+
+
 #background {
     position: absolute;
     z-index: -1;
@@ -51,6 +53,10 @@ body {
 
 #left #user-menu i {
     cursor: pointer;
+}
+
+#left #user-menu i:hover {
+    color: black;
 }
 
 #left #notifications {
@@ -162,6 +168,10 @@ body {
 
 #right #active-contact i {
     color: #B1B1B1;
+}
+
+#right #active-contact i:hover {
+    color: black;
     cursor: pointer;
 }
 
@@ -221,4 +231,9 @@ body {
 
 #right #input-control i {
     color: #676E71;
+}
+
+#right #input-control i:hover {
+    color: black;
+    cursor: pointer;
 }

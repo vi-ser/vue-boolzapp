@@ -170,13 +170,21 @@ createApp({
                 }
             ],
 
+            newMessageText: '',
+
         }
     },
 
     methods: {
 
         // ottengo solo le ore dalla stringa "date"
-        getHours(dateString) {
+        formatHours(dateString) {
+
+            // controllo che la stringa sia valida
+            if (typeof dateString !== 'string' || !dateString.trim()) {
+                console.error('La data non è una stringa valida:', dateString);
+                return '';
+            }
 
             // splitto usando lo spazio
             const [date, time] = dateString.split(' ');
@@ -195,9 +203,30 @@ createApp({
             this.activeIndex = newIndex;
         },
 
-    },
+        sendMessage() {
 
+            // calcolo la data di invio del messaggio nel formato giusto
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const messageTime = `${hours}:${minutes}`;
 
+            // creo un nuovo oggetto messaggio con il testo e la data
+            const newMessage = {
+                message: this.newMessageText,
+                date: messageTime,
+                status: 'sent'
+            };
+
+            // aggiungo il nuovo oggetto all'array di messaggi
+            // this.contacts[this.activeIndex].messages.push(newMessage);
+
+            // pulisco il campo del messaggio dopo l'invio
+            console.log(newMessage)
+            this.newMessageText = '';
+        }
+
+    }
 
 
 }).mount("#app");
