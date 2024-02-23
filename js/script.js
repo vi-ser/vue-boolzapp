@@ -207,45 +207,49 @@ createApp({
         // invio e ricezione messaggi
         sendMessage() {
 
-            // calcolo la data di invio del messaggio nel formato giusto
-            // es. '10/01/2020 15:30:55'
+            if (this.newMessageText.trim() != '') {
 
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = String(now.getMonth()).padStart(2, '0');
-            const day = String(now.getDay()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const messageTime = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+                // calcolo la data di invio del messaggio nel formato giusto
+                // es. '10/01/2020 15:30:55'
 
-            const formattedTime = String(messageTime);
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth()).padStart(2, '0');
+                const day = String(now.getDay()).padStart(2, '0');
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                const messageTime = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 
-            // creo un nuovo oggetto messaggio con il testo e la data
-            const newMessage = {
-                message: this.newMessageText,
-                date: formattedTime,
-                status: 'sent'
-            };
+                const formattedTime = String(messageTime);
 
-            // aggiungo il nuovo oggetto all'array di messaggi
-            this.contacts[this.activeIndex].messages.push(newMessage);
-
-            // pulisco il campo del messaggio dopo l'invio
-            this.newMessageText = '';
-
-
-            // quando invio un messaggio ricevo un messaggio dopo un secondo
-            setTimeout(() => {
-                const receivedMessage = {
-                    message: 'Grazie a te!',
+                // creo un nuovo oggetto messaggio con il testo e la data
+                const newMessage = {
+                    message: this.newMessageText,
                     date: formattedTime,
-                    status: 'received'
+                    status: 'sent'
                 };
 
-                this.contacts[this.activeIndex].messages.push(receivedMessage);
-                ;
-            }, 1000);
+                // aggiungo il nuovo oggetto all'array di messaggi
+                this.contacts[this.activeIndex].messages.push(newMessage);
+
+                // pulisco il campo del messaggio dopo l'invio
+                this.newMessageText = '';
+
+
+                // quando invio un messaggio ricevo un messaggio dopo un secondo
+                setTimeout(() => {
+                    const receivedMessage = {
+                        message: 'Grazie a te!',
+                        date: formattedTime,
+                        status: 'received'
+                    };
+
+                    this.contacts[this.activeIndex].messages.push(receivedMessage);
+                    ;
+                }, 1000);
+
+            }
 
         },
 
