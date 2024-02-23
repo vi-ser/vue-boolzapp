@@ -235,10 +235,10 @@ createApp({
             this.newMessageText = '';
 
 
-            // quando invio un messaggio ricevo un messaggio con scritto 'ok' dopo un secondo
+            // quando invio un messaggio ricevo un messaggio dopo un secondo
             setTimeout(() => {
                 const receivedMessage = {
-                    message: 'ok',
+                    message: 'Grazie a te!',
                     date: formattedTime,
                     status: 'received'
                 };
@@ -270,6 +270,11 @@ createApp({
 
         },
 
-    }
+        deleteMessage(index) {
 
+            this.contacts[this.activeIndex].messages.splice(index, 1);
+
+        }
+
+    }
 }).mount("#app");

@@ -219,6 +219,7 @@ body {
     right: 8px;
     opacity: 1;
     transition: .3s ease;
+    cursor: pointer;
 }
 
 #right #current-chat .message:not(:hover) i {
@@ -236,9 +237,8 @@ body {
     display: none;
 }
 
-.message ul {
+.message ul li {
     font-size: 13px;
-    color: #676E71;
 }
 
 
