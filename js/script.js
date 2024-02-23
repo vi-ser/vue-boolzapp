@@ -231,7 +231,18 @@ createApp({
 
             // pulisco il campo del messaggio dopo l'invio
             this.newMessageText = '';
-        }
+
+
+            // la friendzone
+            const receivedMessage = {
+                message: 'ok',
+                date: formattedTime,
+                status: 'received'
+            };
+
+            this.contacts[this.activeIndex].messages.push(receivedMessage);
+
+        },
 
     }
 
