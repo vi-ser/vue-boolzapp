@@ -364,12 +364,19 @@ createApp({
                 // se l'activeIndex è maggiore o uguale alla lunghezza dell'array dei contatti lo decremento
                 this.activeIndex--;
             }
-        }
+        },
 
+        loader() {
+            setTimeout(() => {
+
+            }, 2000);
+
+        },
     },
 
     mounted() {
         // chiamo il metodo nel mounted per caricare di default l'ultimo accesso del contatto
         this.defaultLastAccess();
+
     }
 }).mount("#app");
