@@ -337,14 +337,22 @@ createApp({
 
         },
 
+        // eliminazione messaggio
         deleteMessage(index) {
 
             this.contacts[this.activeIndex].messages.splice(index, 1);
 
         },
 
+        // eliminazione conversazione
         deleteConversation(index) {
             this.contacts.splice(index, 1);
+
+
+            if (this.activeIndex >= this.contacts.length) {
+                // se l'activeIndex è maggiore o uguale alla lunghezza dell'array dei contatti lo decremento
+                this.activeIndex--;
+            }
         }
 
     },
