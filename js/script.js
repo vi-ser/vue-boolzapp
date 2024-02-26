@@ -88,7 +88,7 @@ createApp({
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Domani la proviamo, Viselloooo',
+                            message: 'Domani la proviamo fr',
                             status: 'received'
                         }
                     ],
@@ -277,7 +277,18 @@ createApp({
                 let answerIndex = this.activeIndex;
 
                 // salvo l'indice in una variabile
-                const activeContact = this.contacts[this.activeIndex];
+                let activeContact = this.contacts[this.activeIndex];
+
+                // elimino il contatto con indice attivo dall'array
+                this.contacts.splice(this.activeIndex, 1);
+
+                // inserisco il contatto all'inizio dell'array
+                this.contacts.unshift(activeContact);
+
+                // attribuisco indici attivi alla prima posizione dell'array
+                this.activeIndex = 0;
+                answerIndex = 0;
+
 
                 setTimeout(() => {
                     // mostro il contatto online (tempo di lettura del messaggio) 
