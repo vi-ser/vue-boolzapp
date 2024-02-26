@@ -112,6 +112,7 @@ body {
 
 #left #contact-list .contact:hover {
     background-color: #f7f7f7;
+    cursor: pointer;
 }
 
 #left #contact-list .contact.active {
@@ -173,6 +174,10 @@ body {
 #right #active-contact i:hover {
     color: black;
     cursor: pointer;
+}
+
+#right #active-contact ul li {
+    font-size: 13px;
 }
 
 #right #current-chat {
@@ -240,8 +245,6 @@ body {
 .message ul li {
     font-size: 13px;
 }
-
-
 
 .message.sent {
     background-color: #D5F9BA;

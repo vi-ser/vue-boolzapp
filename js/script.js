@@ -341,9 +341,14 @@ createApp({
 
             this.contacts[this.activeIndex].messages.splice(index, 1);
 
+        },
+
+        deleteConversation(index) {
+            this.contacts.splice(index, 1);
         }
 
     },
+
     mounted() {
         // chiamo il metodo nel mounted per caricare di default l'ultimo accesso del contatto
         this.defaultLastAccess();

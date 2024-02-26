@@ -101,18 +101,18 @@
 
                             <p class="m-0">{{ contacts[activeIndex].lastAccess }}</p>
 
-                            <!-- <p class="m-0"> Ultimo accesso oggi alle {{
-                                formatHours(contacts[activeIndex].messages[contacts[activeIndex].messages.length -
-                                1].date)
-                                }}
-                            </p> -->
-
                         </div>
                     </div>
                     <div class="right d-flex gap-3 p-2">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <i class="dropdown-toggle fa-solid fa-ellipsis-vertical" data-bs-toggle="dropdown"
+                            aria-expanded="false"></i>
+                        <ul class="dropdown-menu border border-0 shadow">
+                            <li><a @click="deleteConversation(contactIndex)" class="dropdown-item text-black-50"
+                                    href="#">Elimina conversazione</a></li>
+                        </ul>
+
                     </div>
                 </div>
                 <div id="current-chat" class="d-flex flex-column gap-3">
