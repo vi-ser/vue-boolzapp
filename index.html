@@ -136,7 +136,8 @@
                     <i class="fa-regular fa-face-smile"></i>
                     <input v-model="newMessageText" @keyup.enter="sendMessage()" type="text" id="input-message"
                         class="border border-0 rounded-2" placeholder="Scrivi un messaggio">
-                    <i class="fa-solid fa-microphone"></i>
+                    <i class="fa-solid" :class=" newMessageText == '' ? 'fa-microphone' : 'fa-paper-plane' "
+                        @click="sendMessage()"></i>
                 </div>
             </div>
 
