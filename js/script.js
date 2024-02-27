@@ -203,9 +203,10 @@ createApp({
 
         },
 
-        changeContact(newIndex) {
-            this.activeIndex = newIndex;
+        changeContact(selectedContact) {
+            this.activeIndex = this.contacts.indexOf(selectedContact);
         },
+
 
         defaultLastAccess() {
             this.contacts.forEach(contact => {

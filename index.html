@@ -72,8 +72,8 @@
                 </div>
 
                 <div id="contact-list">
-                    <div v-for="(currentContact, contactIndex) in searchContact()" @click="changeContact(contactIndex)"
-                        class="contact d-flex justify-content-between"
+                    <div v-for="(currentContact, contactIndex) in searchContact()"
+                        @click="changeContact(currentContact)" class="contact d-flex justify-content-between"
                         :class=" contactIndex == activeIndex ? 'active' : '' ">
                         <div class="left d-flex gap-3">
                             <img :src="currentContact.avatar">
