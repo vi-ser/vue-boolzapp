@@ -79,16 +79,20 @@
                             <img :src="currentContact.avatar">
                             <div class="info d-flex flex-column pt-1">
                                 <span>{{ currentContact.name }}</span>
-                                <p>
-                                    {{currentContact.messages[currentContact.messages.length - 1].message}}
+                                <p v-if="currentContact.messages.length > 0">
+                                    {{ currentContact.messages[currentContact.messages.length - 1].message }}
+                                </p>
+                                <p v-else>
+                                    <i> Non ci sono messaggi
+                                    </i>
                                 </p>
                             </div>
                         </div>
 
                         <span class="date pt-1">
-                            {{
-                            formatHours(currentContact.messages[currentContact.messages.length - 1].date)
-                            }}
+                            {{ currentContact.messages.length > 0 ?
+                            formatHours(currentContact.messages[currentContact.messages.length - 1].date) : '' }}
+
                         </span>
                     </div>
 
